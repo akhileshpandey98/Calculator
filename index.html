@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        table {
+            width: 300px;
+            border-radius: 10px;
+            box-sizing: border-box;
+            box-shadow: -3px 4px 9px 3px;
+            background-color: silver;
+            margin: auto;
+            margin-top: 10px;
+            border: 5px solid black;
+            padding: 5px;
+            
+            
+        }
+        button
+        {
+            width: 100%;
+            min-height: 37px;
+            background-color:rgb(22, 21, 21);
+            color: white;
+            border: 0px;
+            outline: 0px;
+            font-size: 22px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 3px 3px black;
+         
+            
+
+        }
+        input{
+            width: 100%;
+            min-height: 60px;
+            border: 0px;
+            outline: 0px;
+            background-color: rgb(206, 231, 181);
+            border-radius: 20px;
+            color:black;
+            font-size: 30px;
+            margin: -2px;
+            border: 2px solid black;
+           
+         }
+    </style>
+    <script>
+        function setvalue(x)
+        {
+            document.getElementById("t1").value+=x;
+        }
+        function cleardata()
+        {
+            document.getElementById("t1").value="";
+        }
+        function Calculator()
+        {
+            var a= document.getElementById("t1").value;
+            // eval that work on  add, multiply,sub,division,calculate
+            var b=eval(a);
+            document.getElementById("t1").value=b;
+        }
+        function backspace()
+        {
+            var a= document.getElementById("t1").value;
+            b=a.substring(0,a.length-1);
+            document.getElementById("t1").value=b;
+        }
+    </script>
+</head>
+<body>
+    <h1 align="center">Calculator</h1>
+    <table>
+    <tr>
+        
+        <td colspan="4"><input type="text" id="t1"/></td>
+    </tr>
+    <tr>
+        <td><button onclick="cleardata('c')">c</button></td>
+        <td><button onclick="backspace('')">&larr;</button></td>
+        <td><button onclick="setvalue('%')">%</button></td>
+        <td><button onclick="setvalue('/')">/</button></td>
+        
+       
+    </tr>
+
+    <tr>
+        <td><button onclick="setvalue('1')">1</button></td>
+        <td><button onclick="setvalue('2')">2</button></td>
+        <td><button onclick="setvalue('3')">3</button></td>
+        <td><button onclick="setvalue('+')">+</button></td>
+      
+    </tr>
+
+    <tr>
+        <td><button onclick="setvalue('4')">4</button></td>
+        <td><button onclick="setvalue('5')">5</button></td>
+        <td><button onclick="setvalue('6')">6</button></td>
+        <td><button onclick="setvalue('-')">-</button></td>
+      
+    </tr>
+
+    <tr>
+        <td><button onclick="setvalue('7')">7</button></td>
+        <td><button onclick="setvalue('8')">8</button></td>
+        <td><button onclick="setvalue('9')">9</button></td>
+        <td><button onclick="setvalue('*')">x</button></td>
+      
+    </tr>
+
+    <tr>
+        <td colspan="2"><button onclick="setvalue('0')">0</button></td>
+        <td><button onclick="setvalue('.')">.</button></td>
+        <td><button onclick="Calculator('=')">=</button></td>
+      
+       
+    </tr>
+    </table>
+</body>
+</html>
